@@ -2,10 +2,13 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex20) (read-case-sensitive #t) (teachpacks ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp") (lib "batch-io.rkt" "teachpack" "2htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp") (lib "batch-io.rkt" "teachpack" "2htdp")) #f)))
 (define (string-delete str i)
+  (if (>= i  (string-length str))  str
   (string-append (substring str 0 i)
-                 (substring str (+ i 1) (string-length str))))
+                 (substring str (+ i 1) (string-length str)))))
 
 
 (string-delete "Maria" 4)
 
-;(string-delete "" 2) -  will throw error for empty strings
+(string-delete "" 2) 
+
+
